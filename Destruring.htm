@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destruring</title>
+</head>
+<body> 
+    <script> 
+        //array destructuring
+        let data=["somu","venkat",false,300,200.56];
+        let [x,y,z]=data;
+        console.log(x);
+        console.log(y);
+        console.log(z); 
+        let [a,,,,b]=data;
+        console.log(a);
+        console.log(b) 
+
+        let [,,d]=data; 
+        console.log(d) 
+        //object destructuring
+        let person={
+            name:"krishna",
+            age:57,
+            address:"hyderabad",
+            gender:"male"
+        } 
+
+
+        let{name,age,gender}=person;
+        console.log(name);
+        console.log(age);
+        console.log(gender) 
+
+        //array created by array constructor
+
+        let arr1=Array("rajesh","mahesh",true,100)
+
+        let [name1,name2,,boolean]=arr1; 
+        console.log(name1);
+        console.log(name2);
+        console.log(boolean) 
+
+        //object created using class 
+        class Student{
+            constructor(name,age,grade,address){ 
+                this.name=name;
+                this.age=age;
+                this.grade=grade;
+                this.address=address
+
+            }
+        } 
+        let stu1=new Student('venu',8,'A','hyderabad') 
+        
+        let{grade,address}=stu1;
+        console.log(grade);
+        console.log(address);
+
+         
+        
+
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fetch Api</title>
+</head>
+<body>
+    <div id="container"></div> 
+    <script>
+        async function getData(){
+            const response= await fetch('https://picsum.photos/200/300');
+            const data=await response.json(); 
+
+            try{
+                 const imagesData=data; 
+
+            const containerData=imagesData.map((item)=>{ 
+                // console.log(item)
+                return (
+                    `
+                    <div>
+                        <img src=${item.url} alt=${item.name}>
+                    </div>
+                    
+                    
+                    `
+                )
+            }) 
+            let imagesContainer=document.getElementById('container');
+            container.innerHtml=containerData;
+            }
+           
+            
+
+           
+
+        }
+    </script>
+</body>
+</html>

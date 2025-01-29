@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spread & rest</title>
+</head>
+<body>
+    <script>
+        //spread operator
+        let arr1=[4,5,6]
+        let arr2=[1,2,3,...arr1] 
+        console.log(arr2) 
+        let arr3=[7,8,9]
+        let arr4=[10,11,12] 
+        let arr5=[...arr3,...arr4] 
+        console.log(arr5)
+        //spread operator in function arguments 
+        function sum(a,b,c){
+            return a+b+c 
+        } 
+        let nums=[1,2,3] 
+        let sum_of_numbers=sum(...nums)
+        console.log(sum_of_numbers) 
+
+        //rest operator  
+        let arr6=[1,2,3,4,5] 
+        let [a,b,...rest]=arr6; 
+        console.log(a);
+        console.log(b);
+        console.log(rest)
+
+
+    </script>
+</body>
+</html>

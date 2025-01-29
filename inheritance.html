@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritence</title>
+</head>
+<body>
+    <script>
+        class Parent{
+            constructor(name,age,occupation){ 
+                this.name=name;
+                this.age=age;
+                this.occupation=occupation;
+
+            } 
+            task(){
+                console.log("this is parent function")
+            }
+        } 
+
+        class Child extends Parent{
+            constructor(name,age){ 
+                super(name,age);
+                
+                
+
+            } 
+            play(){
+                console.log("children can play")
+            }
+        } 
+        let c1=new Child("rahul",8); 
+        console.log(c1.name) 
+        console.log(c1.age) 
+        c1.task()
+        c1.play()
+        let p1=new Parent("ramana",34,'Farmer')
+        console.log(p1.occupation) 
+
+
+
+        class GrandChild extends Child{
+            constructor(name,age,address){
+                super(name,age);
+                
+                this.address=address;
+
+            } 
+            play2(){
+                console.log(this.name+" "+" can play more time")
+            }
+        } 
+
+        let gc=new GrandChild("kalyan","6","chennai") 
+        console.log(gc.name)
+        gc.play2()
+        gc.play() 
+        gc.task() 
+        //polymorphism 
+        class Shape{ 
+            constructor(color){
+                this.color=color;
+            } 
+            Draw(){
+                console.log("drawing a shape")
+            }
+
+        } 
+        class Circle extends Shape{
+            constructor(color,radius){
+                super(color);
+                this.radius=radius;
+            } 
+            Draw(){
+                console.log("Drawing a cirle of radius"+" "+this.radius)
+            }
+        } 
+        class Square extends Shape{
+            constructor(color,side){
+                super(color);
+                this.side=side;
+            } 
+            Draw(){
+                console.log("Drawing a square of side with side"+" "+this.side)
+            }
+        } 
+
+        let circle=new Circle("red",12);
+        circle.Draw() 
+        let square=new Square("yellow",15);
+        square.Draw()
+
+    </script>
+</body>
+</html>

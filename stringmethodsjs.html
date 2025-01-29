@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Methods</title>
+</head>
+<body>
+    <h2 style="color:darkorange;text-decoration: underline;">String Methods</h2>
+    <script>
+        // string length
+        let text="Doctor";
+        let textlength=text.length; 
+        document.write(textlength+"<br>") 
+        //charAt()
+        let charOftext=text.charAt(3);
+        document.write(charOftext+"<br>");
+        //charCodeAt()
+        let charCodeAtOfText=text.charCodeAt(0);
+        document.write(charCodeAtOfText+"<br>");
+        //At()
+         let textat=text.at(4);
+        document.write(text.at(4)+"<br>") 
+        //access through negative index
+        let textneg=text.at(-3);
+        document.write(textneg+"<br>")
+        //access using index 
+        let textindex=text[2]
+         document.write(textindex+"<br>")
+         //slicing a string 
+         let text_new="somu ramu nani";
+         let part=text_new.slice(5,9);
+         document.write(part+"<br>")
+         //omit second parameter 
+         let text_params="somu ramu nani";
+         let part1=text_params.slice(5);
+         document.write(part1+"<br>")
+         //negative slice 
+         let string="kamal";
+         let part_string=string.slice(-2);
+         document.write(part_string+"<br>");
+         //subString()
+         let string1="kiwi, Banana, kiwi";
+         let part3=string1.substr(6,12);
+         document.write(part3+"<br>")
+         //subString omit 
+         let string2="kiwi, Banana, kiwi";
+         let part4=string1.substr(6);
+         document.write(part4+"<br>")
+         //toUpperCase 
+         let str="rahul";
+         let str2=str.toUpperCase();
+         document.write(str2+"<br>") 
+         //toLowerCase 
+         let name="DHONI";
+         let name2=name.toLowerCase();
+         document.write(name2+"<br>") 
+         //concat 
+         let first_name="mamuddu";
+         let last_name="suresh";
+         let full_name=first_name.concat(" ",last_name);
+         document.write(full_name+"<br>"); 
+         //substr 
+         let name4="Rajesh";
+         let substr=name4.substr(1,5);
+         document.write(name4.substr(1,5)+"<br>") 
+         //trim
+         let str3="  kumar  "
+         document.write(str3.trim()+"<br>") 
+         //trimStart 
+         let str4="  raj  "
+         document.write(str4.trimStart()+"<br>") 
+         //trimEnd 
+         let str5="  raj  ";
+         document.write(str5.trimEnd()+"<br>") 
+         //padStart 
+         let name5="Mukund";
+         let padStartString=name5.padStart(9,"abc");
+         document.write(padStartString+"<br>"); 
+         //padEnd 
+         let name6="salman";
+         let padEndString=name6.padEnd(10,"khan")
+         document.write(padEndString+"<br>")
+         //repeat 
+         let name7="Bharath"
+         document.write(name7.repeat(4)+"<br>") 
+         //replace 
+         let name8="kalyan kumar"
+         document.write(name8.replace("kumar","krishna")+"<br>")
+         //replaceall 
+         let name9="kalyan kumar teja kumar";
+         document.write(name9.replaceAll("kumar","krishna")+"<br>") 
+         //indexOf 
+         let str6="vande Bharath";
+         document.write(str6.indexOf('a')+"<br>") 
+         //lastIndexOf
+         let str7="Indian cricket team";
+         document.write(str7.lastIndexOf('a'))
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

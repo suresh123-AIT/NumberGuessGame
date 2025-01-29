@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> 
+    <link rel="stylesheet" href="../css code/courosel.css">
+</head>
+<body> 
+<div id="courosel"> 
+    <img src="https://images.pexels.com/photos/12343639/pexels-photo-12343639.jpeg?auto=compress&cs=tinysrgb&w=600" id="imgrefference">
+
+</div> 
+<script>
+    let count=0;
+    let couroselImagesPath=["https://images.pexels.com/photos/6759662/pexels-photo-6759662.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "https://images.pexels.com/photos/11579523/pexels-photo-11579523.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "https://images.pexels.com/photos/14182933/pexels-photo-14182933.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "https://images.pexels.com/photos/1311445/pexels-photo-1311445.jpeg?auto=compress&cs=tinysrgb&w=600"
+    ] 
+    setInterval(()=>{
+        if(count<couroselImagesPath.length){
+            let imagerefference=document.querySelector('#imgrefference')
+            imagerefference.src=couroselImagesPath[count] 
+            count++;
+        }else{
+            count=0;
+        }
+        
+    },3000)
+</script>   
+</body>
+</html>

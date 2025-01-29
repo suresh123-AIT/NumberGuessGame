@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class</title>
+</head>
+<body>
+    <script>
+        class Student{
+            constructor(id,name,grade,address){ 
+                this.id=id;
+                this.name=name;
+                this.grade=grade;
+                this.address=address;
+
+            } 
+            read(){
+                console.log(this.name+" "+'can read')
+            }
+            write(){ 
+                this.id=30; 
+                console.log(this.name +" "+"id is"+" "+this.id);
+
+                console.log(this.name+'can write')
+            }
+
+        } 
+
+        let stu1=new Student(25,'rahul','A','Bangalore') 
+        stu1.read()
+        console.log(stu1.grade) 
+        console.log(stu1.address) 
+        let stu2=new Student(28,'Roshan','A+','chennai') 
+        stu2.write()
+        stu2.read()
+        console.log(stu2.grade)
+
+        class Employee{
+            constructor(id,name,designation,salary){ 
+                this.id=id;
+                this.name=name;
+                this.designation=designation;
+                this.salary=salary;
+
+            } 
+            work(){
+                console.log(this.name+" "+'can do'+" "+this.designation)
+            }
+            update(){ 
+                
+                console.log(this.name +" "+"can update"+" "+this.designation+" "+"work");  
+            } 
+            salary1(){
+                console.log(this.name+" "+"salary is"+" "+this.salary)
+            }
+
+        }  
+
+        let Emp1=new Employee(11,'ravi','Tester',40000) 
+        console.log(Emp1.name) 
+        Emp1.work() 
+        Emp1.update() 
+        Emp1.salary1() 
+        console.log(Emp1.salary) 
+        let Emp2=new Employee('15','Banu','Developer',80000) 
+        console.log(Emp2.designation)
+        console.log(Emp2.salary) 
+        Emp2.update() 
+        Emp2.work() 
+        Emp2.salary1()
+    </script> 
+</body>
+</html>

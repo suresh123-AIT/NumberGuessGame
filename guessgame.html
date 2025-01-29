@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess Game</title> 
+    <link rel="stylesheet" href="../css code/guessgame.css">
+</head>
+<body class="body"> 
+    <div class="top-div">
+    <div class="para-div">
+    <button class="button" id="Again-button">Again!</button> 
+    <p class="paragraph">(Between 1 to 20)</p> 
+    </div> 
+    <p class="guess">Guess My Number...!</p> 
+    <div class="paragraph2" id="number">?</div>
+    <!-- <input class="paragraph2" type="button" value="?" id="random_number_match"/>  -->
+    </div> 
+
+    <div class="last-div"> 
+        <div class="check-number">
+        <input type="number"  class="number-field" id="user_number">
+        <button class="check" id="check_button">Check !</button> 
+        </div> 
+        <div>
+            <p class="paragraph3" id="message"></p> 
+            <p class="paragraph3">Score:<span id="score"></span></p> 
+            <p class="paragraph3">High Score:<span id="high-score"></span></p>
+        </div>
+    </div> 
+
+    <script>
+        // let guess_number=document.getElementById('random_number_match')
+        let number_display=document.getElementById('number')
+        let check_button=document.getElementById('check_button') 
+        let Again_button=document.getElementById('Again-button') 
+        let message_text=document.getElementById('message') 
+        let score_value=document.getElementById('score')
+        let high_score_value=document.getElementById('high-score') 
+        let guessInput=document.getElementById('user_number') 
+
+
+       
+        let randomNumber=Math.floor(Math.random()*20)+1;
+        let score = 20;
+        let highScore = 0; 
+
+        const displayMessage=(message)=>{
+            message_text.textContent=message;
+            
+        } 
+
+        const resetGame = () => {
+        randomNumber = Math.floor(Math.random() * 20) + 1;
+        console.log(randomNumber);
+        score = 20;
+        score_value.textContent = score;
+        number_display.textContent = '?';
+        displayMessage('Start guessing...');
+        document.body.style.backgroundColor = '#333';
+        guessInput.value = '';
+        }; 
+
+
+        
+const checkGuess = () => {
+  const guess = Number(guessInput.value);
+
+  // No input
+  if (!guess || guess >20) {
+    displayMessage(' guess number between 1 to 20..!');
+
+  // Correct guess
+  } else if (guess === randomNumber) {
+    displayMessage( 'Correct Number!');
+    document.body.style.backgroundColor = '#60b347';
+    number_display.textContent = randomNumber;
+
+    if (score > highScore) {
+      highScore = score;
+      high_score_value.textContent = highScore;
+    }
+
+  // Guess is wrong
+  } else if (guess !== randomNumber) {
+    if (score > 1) {
+      displayMessage(guess > randomNumber ? ' Too high!' : ' Too low!');
+      score--;
+      score_value.textContent = score;
+    } else {
+      
+      displayMessage(' You lost the game!');
+      document.body.style.backgroundColor = 'red';
+      score_value.textContent = 0; 
+    } 
+
+  
+  }
+ 
+};
+
+// Event listeners
+check_button.addEventListener('click', checkGuess);
+
+Again_button.addEventListener('click', resetGame);
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

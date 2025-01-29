@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>validation form</title> 
+    <link rel="stylesheet" href="../css code/form.css">
+</head>
+<body>
+    <form class="form">
+        <input type="text" id="username" placeholder="enter user name"> <br> <br> 
+        <p id="namemsg"></p> 
+        <input type="email" id="email" placeholder="Enter valid Email"> <br> <br> 
+        <p id="mailmsg"></p> 
+        <input type="password" id="password" placeholder="Enter valid password" ><br> <br>
+        <p id="passwordmsg"></p> 
+        <input type="password" id="confirmpassword" placeholder="confirm password"><br> <br> 
+        <p id="confirmpasswordmsg"></p>
+        <input type="button" value="submit" id="button">
+
+    </form>  
+
+   
+
+    <script>  
+        let buttonel=document.getElementById('button')
+        buttonel.addEventListener('click',()=>{
+            let name_el=document.getElementById('username'); 
+            let errmsg_el=document.getElementById('namemsg'); 
+            let username=name_el.value;
+            if(username.length<=5){
+                errmsg_el.textContent="username should be more than 5 charecters";
+                errmsg_el.style.color='red';
+            } 
+
+            let email=document.getElementById('email').value; 
+            let email_pattern=/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/ 
+            if(email_pattern.test(email)){
+                    // document.getElementById('mailmsg').textContent="Valid Email";
+                    
+                } else{
+                    document.getElementById('mailmsg').textContent="InValid Email";
+                    document.getElementById('mailmsg').style.color='red'
+
+                    
+                } 
+            let password=document.getElementById('password').value; 
+            let password_pattern=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/ 
+            if(password_pattern.test(password)){
+                    // document.getElementById('passwordmsg').textContent="Valid Password";
+                    
+                } else{
+                    document.getElementById('passwordmsg').textContent="InValid Password"; 
+                    document.getElementById('passwordmsg').style.color='red'
+
+                    
+                }  
+            let mainpassword=document.getElementById('password').value;  
+            let confirmPassword=document.getElementById('confirmpassword').value;  
+            let passwordmsg=document.getElementById('confirmpasswordmsg')
+            if(mainpassword==confirmPassword){
+                passwordmsg.textContent="password matched";
+                passwordmsg.style.color='green';
+            }else{
+                passwordmsg.textContent="password not matched";
+                passwordmsg.style.color='red'; 
+            } 
+
+        })
+        
+     
+        // let name_el=document.getElementById('username'); 
+        // let errmsg_el=document.getElementById('namemsg');
+        // name_el.addEventListener('input',()=>{
+        //     let username=name_el.value; 
+        //     let length=username.length; 
+        //     console.log(length)
+        //     if(length>5){
+        //         name_el.textContent=username;
+        //     }else{
+        //         errmsg_el.textContent="name must be more than 5 charecters";
+        //         errmsg_el.style.color='red';
+        //     } 
+        // })
+        // console.log(username1)
+        // if(username.length<=5){
+        //     let namemsg=document.getElementById('namemsg')  
+        //     namemsg.textContent="Name length should be greater than 5 charecters";
+            
+        // } 
+        
+
+
+
+
+
+        // function email(){ 
+        //     let email=document.getElementById('email').value; 
+        //     let email_pattern=/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/ 
+        //     if(email_pattern.test(email)){
+        //             document.getElementById('mailmsg').textContent="Valid Email";
+                    
+        //         } else{
+        //             document.getElementById('mailmsg').textContent="InValid Email";
+                    
+        //         } 
+
+        // } 
+
+        // function password(){ 
+        //     let password=document.getElementById('password').value; 
+        //     let password_pattern=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/ 
+        //     if(password_pattern.test(password)){
+        //             document.getElementById('passwordmsg').textContent="Valid Password";
+                    
+        //         } else{
+        //             document.getElementById('passwordmsg').textContent="InValid Password";
+                    
+        //         } 
+
+        // }
+        
+       
+        // function matchpassword(){ 
+        // let mainpassword=document.getElementById('password').value;  
+        // let confirmPassword=document.getElementById('confirmpassword').value;  
+        // let passwordmsg=document.getElementById('confirmpasswordmsg')
+        // if(confirmPassword===mainpassword){
+        //     passwordmsg.textContent="password matched"
+        // }
+
+        // } 
+    </script>
+    
+</body>
+</html>
